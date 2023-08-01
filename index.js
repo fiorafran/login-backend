@@ -6,13 +6,12 @@ import cors from "cors";
 
 const app = express();
 
-const corsOptions = {
-  origin: ["http://localhost:4200"],
-  methods: ["POST"],
-};
-
 // Settings
 config();
+const corsOptions = {
+  origin: [process.env.FRONT],
+  methods: ["POST"],
+};
 app.set("port", process.env.PORT || 3000);
 app.use(cors(corsOptions));
 
